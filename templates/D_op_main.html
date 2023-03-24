@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/D_op_main.css',_external=True) }}"/>
+</head>
+<body>
+<div class="sign-div">
+    <h1 style="text-align: center;color: rgb(193,210,240);" > 请选择操作：</h1>
+    <a href="/doctor_log">
+        {#此处需要修改悬浮元组，button类如何融入input中#}
+        <input  class="button_back" value="返回首页" type="button" style="position: absolute; top:10%; left: 10%">
+    </a>
+    <a href="/D_op_select1">
+        {#此处需要修改悬浮元组，button类如何融入input中#}
+        <input  class="button_op" value="查询群众信息" type="button" style="position: absolute; top:40%; left: 35%">
+    </a>
+    <a href="/D_op_add">
+        {#此处需要修改悬浮元组，button类如何融入input中#}
+        <input  class="button_op" value="添加群众信息" type="button" style="position: absolute; top:60%; left: 35%">
+    </a>
+</div>
+</body>
+</html>

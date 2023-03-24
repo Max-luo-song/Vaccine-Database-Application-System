@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/people_op.css',_external=True) }}"/>
+</head>
+<body>
+<div class="sign-div">
+    <a href="/">
+        {#此处需要修改悬浮元组，button类如何融入input中#}
+        <input  class="button" value="返回首页" type="button" style="position: absolute; top:10%; left: 10%">
+    </a>
+
+    <h1 style="text-align: center;color: rgb(193,210,240);" > 您的信息如下：</h1>
+    <label style="position: absolute; top: 40%; left: 20%"> 身份证号：</label>
+    <div class="test" style="position: absolute; top:41%; left: 35%">{{ people_data_ID_card }} </div>
+    <label style="position: absolute; top: 40%; left: 60%"> 姓名：</label>
+    <div class="test" style="position: absolute; top:41%; left: 75%">{{ people_data_name }} </div>
+    <label style="position: absolute; top: 60%; left: 20%"> 性别：</label>
+    <div class="test" style="position: absolute; top:61%; left: 35%">{{ people_data_sex }} </div>
+    <label style="position: absolute; top: 60%; left: 60%"> 联系电话：</label>
+    <div class="test" style="position: absolute; top:61%; left: 75%">{{ people_data_tele }} </div>
+    <label style="position: absolute; top: 80%; left: 20%"> 接种情况：</label>
+    <div class="test" style="position: absolute; top:81%; left: 35%">{{ people_data_situ }} </div>
+</div>
+</body>
+</html>

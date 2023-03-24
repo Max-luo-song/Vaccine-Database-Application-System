@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/D_op_select1.css',_external=True) }}"/>
+</head>
+
+<body>
+<div class="sign-div">
+    <ul>
+    <li><a href="/">群众</a></li>
+    <li><a class="active" href="/doctor_log">医生</a></li>
+    <li><a href="/manager_log">管理员</a></li>
+    </ul>
+    <form class=""  method="post">
+        {{ form.csrf_token() }}
+        <h1 style="text-align: center;color: rgb(193,210,240);" > 群众信息查询</h1>
+        {{ form.ID_Card(class="sign-text_id_card") }}
+        {{ form.name(class='sign-text_name') }}
+
+       {{ form.check(class="sign-btn") }}
+
+        <!--对于flash的使用要用如下一个循环，它有缓冲区-->
+        {% for message in get_flashed_messages() %}
+            {#对于显示文字的样式可以用style来改变，style有color参数用于改变颜色#}
+            <div class=flash style="color: rgb(255,0,0);position: absolute;top:70%;left: 45%")>{{ message }}</div>
+        {% endfor %}
+    </form>
+</div>
+</body>
+</html>

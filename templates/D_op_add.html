@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/D_op_add.css',_external=True) }}"/>
+</head>
+<body>
+<div class="sign-div">
+    <ul>
+    <li><a href="/">群众</a></li>
+    <li><a class="active" href="/doctor_log">医生</a></li>
+    <li><a href="/manager_log">管理员</a></li>
+    </ul>
+    <form class=""  method="post">
+        {{ d_op_add.csrf_token() }}
+
+        <h1 style="text-align: center;color: rgb(193,210,240);" > 请输入群众信息</h1>
+        <label style="position: absolute; top: 40%; left: 20%" >{{ d_op_add.ID_card.label}}</label>
+        {{ d_op_add.ID_card(class="sign-text_ID_card") }}
+        <label style="position: absolute; top: 40%; left: 60%" >{{ d_op_add.name.label }} </label>
+        {{ d_op_add.name(class='sign-text_name') }}
+        <label style="position: absolute; top: 60%; left: 20%">{{ d_op_add.sex.label}}</label>
+        {{ d_op_add.sex(class='sign-text_sex') }}
+        <label style="position: absolute; top: 60%; left: 60%">{{ d_op_add.tele.label }}</label>
+        {{ d_op_add.tele(class='sign-text_tele') }}
+        <label style="position: absolute; top: 80%; left: 20%">{{ d_op_add.situ.label }}</label>
+        {{ d_op_add.situ(class='sign-text_situ') }}
+
+        {{ d_op_add.add(class='sign-btn') }}
+    {#
+        <h1 style="text-align: center;color: rgb(193,210,240);" > 查询疫苗信息</h1>
+        <input class="sign-text" type="text" placeholder="身份证号" >
+        <input class="sign-text" type="text" placeholder="姓名">
+        <input class="sign-btn" type="submit" value="查询">
+    #}
+
+        <!--对于flash的使用要用如下一个循环，它有缓冲区-->
+        {% for message in get_flashed_messages() %}
+            {#对于显示文字的样式可以用style来改变，style有color参数用于改变颜色#}
+            <div class=flash style="color: rgb(255,0,0)")>{{ message }}</div>
+        {% endfor %}
+    </form>
+</div>
+</body>
+</html>

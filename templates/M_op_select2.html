@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/M_op_select2.css',_external=True) }}"/>
+</head>
+<body>
+<div class="sign-div">
+
+    <form class="" method="post">
+        {{ m_change.back(class="button_back") }}
+        <h1 style="text-align: center;color: rgb(193,210,240);" > 该群众信息如下：</h1>
+        <label style="position: absolute; top: 40%; left: 20%"> 身份证号：</label>
+        <div class="test" style="position: absolute; top:41%; left: 32%">{{ people_data_ID_card }} </div>
+        <label style="position: absolute; top: 40%; left: 60%"> 姓名：</label>
+        <div class="test" style="position: absolute; top:41%; left: 72%">{{ people_data_name }} </div>
+        <label style="position: absolute; top: 60%; left: 20%"> 性别：</label>
+        <div class="test" style="position: absolute; top:61%; left: 32%">{{ people_data_sex }} </div>
+        <label style="position: absolute; top: 60%; left: 60%"> 联系电话：</label>
+        <div class="test" style="position: absolute; top:61%; left: 72%">{{ people_data_tele }} </div>
+        <label style="position: absolute; top: 80%; left: 20%"> 接种情况：</label>
+        <div class="test" style="position: absolute; top:81%; left: 32%">{{ people_data_situ }} </div>
+
+        {{ m_change.new_name(class="new_name") }}
+        {{ m_change.sex(class="new_sex") }}
+        {{ m_change.tele(class="new_tele") }}
+        {{ m_change.situ(class="new_situ") }}
+
+        {{ m_change.change(class="button_add") }}
+        {{ m_change.delete(class="button_delete") }}
+
+    </form>
+</div>
+</body>
+</html>

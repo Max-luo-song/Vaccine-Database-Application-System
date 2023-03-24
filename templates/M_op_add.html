@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/M_op_add.css',_external=True) }}"/>
+</head>
+<body>
+<div class="sign-div">
+    <ul>
+    <li><a href="/">群众</a></li>
+    <li><a href="/doctor_log">医生</a></li>
+    <li><a class="active" href="/manager_log">管理员</a></li>
+    </ul>
+    <form class=""  method="post">
+
+        {{ m_op_add.csrf_token() }}
+        <h1 style="text-align: center;color: rgb(193,210,240);" > 请输入账号信息:</h1>
+        <label style="position: absolute; top: 40%; left: 40%" >{{ m_op_add.id.label}}</label>
+        {{ m_op_add.id(class="sign-id") }}
+        <label style="position: absolute; top: 60%; left: 40%" >{{ m_op_add.password.label }} </label>
+        {{ m_op_add.password(class='sign-password') }}
+        {{ m_op_add.add(class='sign-btn') }}
+
+        <!--对于flash的使用要用如下一个循环，它有缓冲区-->
+        {% for message in get_flashed_messages() %}
+            {#对于显示文字的样式可以用style来改变，style有color参数用于改变颜色#}
+            <div class=flash style="color: rgb(255,0,0)")>{{ message }}</div>
+        {% endfor %}
+    </form>
+</div>
+</body>
+</html>

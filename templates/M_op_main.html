@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/M_op_main.css',_external=True) }}"/>
+</head>
+<body>
+<div class="sign-div">
+    <h1 style="text-align: center;color: rgb(193,210,240);" > 请选择操作：</h1>
+    <a href="/manager_log">
+        {#此处需要修改悬浮元组，button类如何融入input中#}
+        <input  class="button_back" value="返回首页" type="button" style="position: absolute; top:5%; left: 10%">
+    </a>
+    <a href="/M_op_select1">
+        {#此处需要修改悬浮元组，button类如何融入input中#}
+        <input  class="button_op" value="查询群众信息" type="button" style="position: absolute; top:35%; left: 35%">
+    </a>
+    <a href="/M_op_add">
+        {#此处需要修改悬浮元组，button类如何融入input中#}
+        <input  class="button_op" value="添加医生账户" type="button" style="position: absolute; top:55%; left: 35%">
+    </a>
+    <a href="/M_op_delete">
+        {#此处需要修改悬浮元组，button类如何融入input中#}
+        <input  class="button_op" value="删除医生账户" type="button" style="position: absolute; top:75%; left: 35%">
+    </a>
+    <!--对于flash的使用要用如下一个循环，它有缓冲区-->
+    {% for message in get_flashed_messages() %}
+        {#对于显示文字的样式可以用style来改变，style有color参数用于改变颜色#}
+        <div class=flash style="color: rgb(255,0,0)")>{{ message }}</div>
+    {% endfor %}
+</div>
+</body>
+</html>
